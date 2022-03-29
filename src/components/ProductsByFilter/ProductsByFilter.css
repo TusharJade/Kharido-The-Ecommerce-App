@@ -1,0 +1,23 @@
+.product-listing{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: center;
+    column-gap: 3.2rem;
+    row-gap: 2rem;
+    margin: 1.5rem 0rem 1.5rem 0rem ;
+}
+
+@media (max-width:900px) {
+    .product-listing{
+        width: 90%;
+        grid-template-columns: repeat(3,1fr);
+        gap:1rem
+    }
+}
+
+@media (max-width:613px) {
+    .product-listing{
+        width: 100%;
+        grid-template-columns: repeat(2,1fr);
+    }
+}

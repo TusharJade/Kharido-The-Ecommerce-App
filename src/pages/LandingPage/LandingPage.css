@@ -1,0 +1,7 @@
+.section-categery {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    width: 100%;
+    justify-content: space-around;
+}

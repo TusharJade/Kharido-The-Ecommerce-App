@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --white-bga: white;
+    --shadow-gainsboro: gainsboro;
+    --body-bg: #f1f3f6;
+    --green: green;
+    --color-primary: #f05632;
+}
+
+.cart-calculater {
+    width: 40%;
+    background-color: var(--white-bga);
+    box-shadow: 0.7px 0.7px 0.6px 0.6px var(--shadow-gainsboro);
+    margin-left: 3rem;
+    height: 14rem;
+}
+
+.cartheading-calc {
+    padding: 0.9rem 1rem;
+    box-shadow: 0.1px 0.1px 0.6px 0.6px var(--shadow-gainsboro);
+    font-weight: 600;
+}
+
+.price-details {
+    display: inline-block;
+}
+
+.pricing-outerbox {
+    margin: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.divbox {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+}
+
+.green-color {
+    color: var(--green);
+}
+
+.line {
+    border-bottom: 1px solid var(--shadow-gainsboro);
+}
+
+.total-paybox {
+    display: flex;
+    margin: 1rem 1rem;
+    font-weight: 600;
+    justify-content: space-between;
+}
+
+.place-order {
+    box-shadow: 1px 1px 1px 1px var(--shadow-gainsboro);
+    border: none;
+    padding: 0.75rem 1rem;
+    background-color: #f05632;
+    width: 10rem;
+    color: var(--white-bga);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.placeorder-div {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 0.6rem;
+    box-shadow: 0.7px 0.7px 0.6px 0.6px gainsboro;
+    margin: 2rem 0rem;
+}
+
+.card-outerspace {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container-horiz {
+    margin-bottom: 1rem;
+}
+
+.mainbox {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+
+@media(max-width:693px) {
+    .cart-calculater {
+        width: 100%;
+        margin: 2rem 1rem;
+    }
+
+    .mainbox {
+        margin-top: 1.5rem;
+        margin-bottom: 5rem;
+    }
+}

@@ -1,0 +1,17 @@
+.cart-page{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    justify-items: center;
+}
+
+@media (max-width:1190px) {
+    .cart-page{
+        grid-template-columns: 20% 80%;
+    }
+}
+
+@media (max-width:1140px) {
+    .cart-page{
+        grid-template-columns: 100%;
+    }
+}

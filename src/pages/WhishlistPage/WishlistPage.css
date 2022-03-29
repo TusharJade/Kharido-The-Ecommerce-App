@@ -1,0 +1,29 @@
+.wishlist-text{
+ font-weight: 600;
+ font-size: 1.2rem;
+ text-align: center;
+ margin:  1rem 0rem;
+}
+
+.wishlist-container{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+    row-gap: 1rem;
+    column-gap: 1rem;
+    justify-items: center;
+    margin: 1rem 0rem 1.5rem 0rem;
+
+}
+
+
+@media (max-width:1150px){
+    .wishlist-container{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media (max-width:550px){
+    .wishlist-container{
+        grid-template-columns: repeat(2,1fr)
+    }
+}
