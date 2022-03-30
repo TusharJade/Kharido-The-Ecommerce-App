@@ -1,0 +1,123 @@
+:root {
+    --kharido-bg: #2874f0;
+    --white-bga: white;
+    --shadow-gainsboro: gainsboro;
+    --body-bg: #f1f3f6;
+    --color-primary: #f05632;
+    --color-secondary: #f59e28;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: var(--body-bg);
+}
+
+.login {
+    width: 30%;
+    height: 23.1rem;
+    margin: auto;
+    margin-top: 5rem;
+    background-color: var(--white-bga);
+    box-shadow: 1px 1px 1px 1px var(--shadow-gainsboro);
+}
+
+.sign-up {
+    width: 30%;
+    height: 33.8rem;
+    margin: auto;
+    margin-top: 5rem;
+    background-color: var(--white-bga);
+    box-shadow: 1px 1px 1px 1px var(--shadow-gainsboro);
+    margin-bottom: 3rem;
+}
+
+.login-text {
+    width: auto;
+    text-align: center;
+    font-size: 1.12rem;
+    font-weight: 700;
+    padding: 1.2rem;
+}
+
+.login-input {
+    width: 100%;
+    border: 1.5px solid var(--shadow-gainsboro);
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+}
+
+
+.inputs-outerbox {
+    margin: 1rem 2rem;
+}
+
+.logins-outerbox {
+    margin: 1rem 2rem;
+}
+
+.simple-login {
+    padding: 0.65rem 1rem;
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--white-bga);
+    font-weight: 600;
+    width: 100%;
+}
+
+.guest-login {
+    padding: 0.65rem 1rem;
+    border: none;
+    background-color: var(--color-secondary);
+    color: var(--white-bga);
+    font-weight: 600;
+    width: 100%;
+    margin: 1rem 0rem 0rem 0rem;
+}
+
+.dont-acc {
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.sign-up-anchor {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--kharido-bg);
+}
+
+.dont-acc-outerbox {
+    display: flex;
+    margin: 1rem 2rem;
+    justify-content: center;
+}
+
+
+
+
+
+@media (max-width:900px) {
+    .login {
+        width: 60%;
+    }
+    .sign-up{
+        width: 60%;
+    }
+}
+
+
+@media (max-width:580px) {
+    .login {
+        width: 100%;
+    }
+    .sign-up{
+        width: 100%;
+    }
+}

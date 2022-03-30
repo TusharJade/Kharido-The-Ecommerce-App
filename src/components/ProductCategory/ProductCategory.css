@@ -1,0 +1,32 @@
+
+:root {
+    --primary-color: #2874f0;
+    --text-color-page: black;
+    --white-bga: white;
+    --shadow-gainsboro: gainsboro;
+    --body-bg: #f1f3f6;
+}
+
+.category-anchor {
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color-page);
+    box-shadow: 1px 1px 2px 1.5px var(--shadow-gainsboro);
+    background-color: var(--white-bga);
+}
+
+.category-img {
+    width: 7rem;
+    height: 7rem;
+    background-color: var(--white-bga);
+}
+
+@media (max-width:380px) {
+    .category-img {
+        width: 6rem;
+        height: 6rem;
+    }
+}

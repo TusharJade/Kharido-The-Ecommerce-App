@@ -1,0 +1,22 @@
+.heart{
+    color: gainsboro;
+    position: absolute;
+    bottom: 17.9rem;
+    left: 9.2rem;
+}
+
+.card-container-part{
+    height: 19.54rem;
+}
+
+.all-data{
+    margin-left: 0.2rem;
+    font-weight: 500;
+}
+
+.category{
+    margin-top: 0.3rem;
+    font-size: 0.69rem;
+}
+
+

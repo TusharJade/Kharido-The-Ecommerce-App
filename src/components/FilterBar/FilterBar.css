@@ -1,0 +1,108 @@
+:root {
+  --gainsboro: gainsboro;
+  --white: white;
+  --white-smoke: whitesmoke;
+}
+
+.normal-list {
+  list-style: decimal;
+  padding: 0.2rem 0rem;
+}
+
+.spaced-list {
+  list-style: none;
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem 1rem;
+  background-color: var(--gainsboro);
+  width: max-content;
+}
+
+.notification-img {
+  width: 4rem;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+}
+
+.stacked-list {
+  list-style: none;
+}
+
+.stacked-ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+  box-shadow: 1px 1px 5px 2px var(--gainsboro);
+}
+
+.stacked-container {
+  display: flex;
+  background-color: var(--white-smoke);
+  box-shadow: 1px 1px 3px 1px var(--gainsboro);
+  padding: 0.3rem 0rem;
+}
+
+.notifi {
+  margin-bottom: 0.7rem;
+}
+
+.notifi-container {
+  padding: 0.6rem 0.5rem 0rem 0.5rem;
+}
+
+/* Checkbox */
+
+.all-contain {
+  width: 15rem;
+  box-shadow: 1px 1px 1px 1px var(--gainsboro);
+  background-color: var(--white);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-name {
+  font-size: 0.97rem;
+  font-weight: 500;
+}
+
+.main-category {
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.03rem;
+}
+
+.filters {
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0.8px 0.8px 0.2px 0.6px var(--gainsboro);
+}
+
+.category-list {
+  padding: 0.3rem 1.5rem;
+  list-style: none;
+}
+
+.last-spcae {
+  padding: 0.3rem 0rem;
+}
+
+.ul-un {
+  padding: 0;
+  margin: 0;
+}
+
+.clear-all {
+  margin: 0rem 0rem 0rem 5.2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 1px solid;
+  cursor: pointer;
+}
+
+@media (max-width:1140px) {
+  .all-contain{
+    display: none;
+  }
+}
