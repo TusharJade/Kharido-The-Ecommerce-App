@@ -4,15 +4,8 @@ import "./WishlistPage.css";
 const WishlistPage = () => {
   return (
     <div>
-      <div class="wishlist-text">My Wishlist</div>
-      <section class="wishlist-container">
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-      </section>
+      <div className="wishlist-text">My Wishlist</div>
+      <section className="wishlist-container"></section>
     </div>
   );
 };
