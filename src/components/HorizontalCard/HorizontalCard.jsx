@@ -28,7 +28,7 @@ const HorizontalCard = () => {
         </div>
         <button className="card-add-btn horizon-ca">Move to wishlist</button>
         <div className="delete-button">
-          <i class="fas fa-times cross-color"></i>
+          <i className="fas fa-times cross-color"></i>
         </div>
       </div>
     </div>

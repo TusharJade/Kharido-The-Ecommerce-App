@@ -1,17 +1,18 @@
+import { useFilterContext } from "../../context/filter-context";
 import "./ProductCategory.css";
+import { Link } from "react-router-dom";
 
-const ProductCategory = () => {
+const ProductCategory = ({ item }) => {
+  const { productListState, productListDispatch } = useFilterContext();
   return (
     <div
-      href="/HTML and CSS/Product listing page with filters/product-listing.html"
-      class="category-anchor"
+      className="category-anchor"
+      onClick={() =>
+        productListDispatch({ type: "CATEGORY", payload: item.categoryName })
+      }
     >
-      <img
-        class="category-img"
-        src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100"
-        alt="Grocery"
-      />
-      <div>Grocery</div>
+      <img className="category-img" src={item.img} alt={item.name} />
+      <div className="brand-name">{item.name}</div>
     </div>
   );
 };
