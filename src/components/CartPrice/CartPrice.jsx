@@ -8,7 +8,9 @@ const CartPrice = () => {
     (acu, value) => {
       return {
         ...acu,
-        price: acu.price + parseInt(value.discountPrice) * value.cartQuantity,
+        price:
+          acu.price +
+          Number(value.discountPriceCalculation) * value.cartQuantity,
       };
     },
     { price: 0 }
@@ -18,7 +20,7 @@ const CartPrice = () => {
     (acu, value) => {
       return {
         ...acu,
-        price: acu.price + parseInt(value.mrp) * value.cartQuantity,
+        price: acu.price + Number(value.mrpCalculation) * value.cartQuantity,
       };
     },
     { price: 0 }
@@ -40,12 +42,16 @@ const CartPrice = () => {
       <div className="pricing-outerbox">
         <div className="divbox">
           <div>Total MRP</div>
-          <div className="total-mrpnum ">₹{totalMRP.price}</div>
+          <div className="total-mrpnum ">
+            ₹{totalMRP.price.toLocaleString("en-US")}
+          </div>
         </div>
 
         <div className="divbox">
           <div>Discount on MRP</div>
-          <div className="green-color">-₹{discountOnMRP}</div>
+          <div className="green-color">
+            -₹{discountOnMRP.toLocaleString("en-US")}
+          </div>
         </div>
 
         <div className="divbox line">
@@ -56,7 +62,7 @@ const CartPrice = () => {
 
       <div className="total-paybox">
         <div>Total Amount</div>
-        <div>₹{totalPriceByDiscount.price}</div>
+        <div>₹{totalPriceByDiscount.price.toLocaleString("en-US")}</div>
       </div>
 
       <div className="placeorder-div">
