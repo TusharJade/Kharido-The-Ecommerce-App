@@ -26,6 +26,7 @@
     align-items: center;
     justify-content: center;
     height: 1.3rem;
+    cursor: pointer;
 }
 
 .plus-minus {
@@ -38,6 +39,7 @@
     position: absolute;
     bottom: 9.7rem;
     left: 23rem;
+    cursor: pointer;
 }
 
 .horizon-content-text{

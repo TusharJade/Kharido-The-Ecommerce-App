@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/cart-context";
+import "./Navbar.css";
 
 const Navbar = () => {
+  const { cartState, cartDispatch } = useCartContext();
   return (
     <header className="simple-head">
       <Link to="/" className="header-name">
@@ -13,7 +16,12 @@ const Navbar = () => {
           </div>
         </Link>
         <Link to="/AddToCart" className="header-cart-color">
-          <i className="fas fa-shopping-cart"></i>
+          <div className="cart-iconbox">
+            <i className="fas fa-shopping-cart"></i>
+            {cartState.cartList.length === 0 ? null : (
+              <span className="notification">{cartState.cartList.length}</span>
+            )}
+          </div>
         </Link>
         <Link className="head-login" to="/Login">
           Login

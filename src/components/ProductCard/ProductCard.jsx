@@ -1,6 +1,9 @@
+import { useCartContext } from "../../context/cart-context";
+import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
 const ProductCard = ({ item }) => {
+  const { cartState, cartDispatch } = useCartContext();
   return (
     <div className="card-container-part">
       <div className="card-img-box">
@@ -21,9 +24,21 @@ const ProductCard = ({ item }) => {
         </div>
       </div>
 
-      <button className="card-add-btn">
-        <i className="fas fa-shopping-cart"></i> Add to cart
-      </button>
+      {cartState.cartList.find((cartItem) => cartItem.id === item.id) ? (
+        <button className="card-add-btn">
+          <Link to="/AddToCart" className="link">
+            <i className="fas fa-shopping-cart"></i> Go to cart
+          </Link>
+        </button>
+      ) : (
+        <button
+          className="card-add-btn"
+          onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: item })}
+        >
+          <i className="fas fa-shopping-cart"></i> Add to cart
+        </button>
+      )}
+
       <div>
         <i className="fas fa-heart heart"></i>
       </div>
