@@ -16,7 +16,7 @@ const cartReducerFunc = (cartState, action) => {
       return {
         ...cartState,
         cartList: cartState.cartList.filter(
-          (item) => item.id !== action.payload.id
+          (item) => item._id !== action.payload._id
         ),
       };
     case "INCREASE":

@@ -35,6 +35,7 @@ export const products = [
     inWishlist: false,
   },
   {
+    _id: uuid(),
     title: "Fortune Oil",
     description: "Refined Sunflower Oil",
     rating: "3",
@@ -48,6 +49,7 @@ export const products = [
     inWishlist: false,
   },
   {
+    _id: uuid(),
     title: "IPhone",
     description: "iPhone 13 Mini",
     rating: "5",
@@ -61,6 +63,7 @@ export const products = [
     inWishlist: false,
   },
   {
+    _id: uuid(),
     title: "Router",
     description: "D-Link Wireless Router",
     rating: "4",
@@ -74,6 +77,7 @@ export const products = [
     inWishlist: false,
   },
   {
+    _id: uuid(),
     title: "MarQ TV",
     description: "MarQ 80 cm (32 inch) HD",
     rating: "3",
@@ -87,6 +91,7 @@ export const products = [
     inWishlist: false,
   },
   {
+    _id: uuid(),
     title: "Teddy Bear",
     description: "Purple Color teddy bear",
     rating: "2",
@@ -100,6 +105,7 @@ export const products = [
     inWishlist: false,
   },
   {
+    _id: uuid(),
     title: "Osiris",
     description: "3-Layer Face Mask",
     rating: "4",
@@ -113,6 +119,7 @@ export const products = [
     inWishlist: false,
   },
   {
+    _id: uuid(),
     title: "Haldirams",
     description: "Bhujia Sev",
     rating: "5",
