@@ -10,3 +10,64 @@
     text-decoration: none;
     color: var(--text-color);
 }
+
+.view-all{
+    background-color: var(--kahrido-bg );
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 0.2rem;
+    color: var(--white);
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    cursor: pointer;
+}
+
+.offer-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.deals-ofday {
+    box-shadow: 1px 1px 2px 1.4px var(--shadow-gainsboro);
+    background-color: var(--white-bga);
+    margin: 0.3rem 1rem;
+}
+
+.card-anchor {
+    text-decoration: none;
+    color: var(--text-color-page);
+    margin: 1rem 1rem;
+}
+
+.extra-snack {
+    display: none;
+}
+
+.deals-line {
+    height: 0.04rem;
+    background-color: var(--shadow-gainsboro);
+}
+
+.product-landing-outerbox{
+    display: flex;
+    overflow: auto;
+    gap: 1rem;
+}
+
+.product-landing-outerbox::-webkit-scrollbar{
+    display: none;
+}
+
+.product-landing-outerbox::-webkit-scrollbar-button{
+  scroll-behavior: smooth;
+}
+
+
+@media (max-width:500px){
+    .card-anchor {
+        margin: 1rem 0.2rem;
+    }
+}

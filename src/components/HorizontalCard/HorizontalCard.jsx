@@ -1,8 +1,11 @@
 import { useCartContext } from "../../context/cart-context";
+import { useWishlistContext } from "../../context/wishlist-context";
 import "./HorizontalCard.css";
+import { Link } from "react-router-dom";
 
 const HorizontalCard = ({ item }) => {
   const { cartState, cartDispatch } = useCartContext();
+  const { wishlistState, wishlistDispatch } = useWishlistContext();
   return (
     <div className="card-container-horiz">
       <div className="card-img-box">
@@ -32,7 +35,23 @@ const HorizontalCard = ({ item }) => {
             <i class="fas fa-plus plus-minus"></i>
           </button>
         </div>
-        <button className="card-add-btn horizon-ca">Move to wishlist</button>
+        {wishlistState.wishList.find(
+          (wishlistItem) => wishlistItem._id === item._id
+        ) ? (
+          <Link className="Link" to="/Wishlist">
+            <button className="card-add-btn horizon-ca">Go to wishlist</button>
+          </Link>
+        ) : (
+          <button
+            onClick={() =>
+              wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: item })
+            }
+            className="card-add-btn horizon-ca"
+          >
+            Move to wishlist
+          </button>
+        )}
+
         <div
           className="delete-button"
           onClick={() =>

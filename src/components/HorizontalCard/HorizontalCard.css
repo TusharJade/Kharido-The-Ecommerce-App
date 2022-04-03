@@ -45,3 +45,8 @@
 .horizon-content-text{
     margin-top: 0.8rem;
 }
+
+.Link {
+    text-decoration: none;
+    color: var(--white);
+}

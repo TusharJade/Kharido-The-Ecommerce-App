@@ -1,8 +1,9 @@
 .heart{
     color: rgb(208, 208, 208);
     position: absolute;
-    bottom: 17.7rem;
-    left: 9.3rem;
+    bottom: 17.5rem;
+    left: 9.15rem;
+    font-size: 1.2rem;
 }
 
 .card-container-part{
@@ -26,4 +27,13 @@
 .link{
     text-decoration: none;
     color: var(--white);
+}
+
+.wishlist-hover{
+    cursor: pointer;
+}
+
+.heartfull{
+    color: #ff4343;
+    
 }
