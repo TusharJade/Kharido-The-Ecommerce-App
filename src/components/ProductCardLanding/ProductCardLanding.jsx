@@ -1,3 +1,5 @@
+import "./ProductCardLanding.css";
+
 const ProductCardLanding = ({ item }) => {
   return (
     <div className="card-anchor">
@@ -7,10 +9,10 @@ const ProductCardLanding = ({ item }) => {
         </div>
         <div className="brand-name">{item.title}</div>
         <div className="category-simple">{item.description}</div>
-        <div className="price">Rs. {item.discountPrice}</div>
+        <div className="price-is">Rs. {item.discountPrice}</div>
         <div className="price-cut-container-simple">
           <span className="price-cut">Rs. {item.mrp}</span>
-          <span className="price-offer">({item.discountPercent} off)</span>
+          <span className="price-offer">({item.discountPercent}% off)</span>
         </div>
       </div>
     </div>

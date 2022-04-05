@@ -1,23 +1,26 @@
 .heart{
     color: rgb(208, 208, 208);
     position: absolute;
-    bottom: 17.5rem;
-    left: 9.15rem;
+    bottom: 17.67rem;
+    left: 9.1rem;
     font-size: 1.2rem;
 }
 
 .card-container-part{
-    height: 19.23rem;
+    height: 19.39rem;
+}
+
+.card-add-btn{
+    margin-top: 0.3rem;
 }
 
 .all-data{
     margin-left: 0.2rem;
-    font-weight: 600;
 }
 
 .category{
-    margin-top: 0.28rem;
     font-size: 0.69rem;
+    margin-top: 0.25rem;
 }
 
 .brand-name{
@@ -35,5 +38,8 @@
 
 .heartfull{
     color: #ff4343;
-    
+}
+
+.price{
+    margin-top: 0.3rem;
 }

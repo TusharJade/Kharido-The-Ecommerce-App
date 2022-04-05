@@ -1,23 +1,15 @@
-:root {
-    --white-bga: white;
-    --shadow-gainsboro: gainsboro;
-    --body-bg: #f1f3f6;
-    --green: green;
-    --color-primary: #f05632;
-}
-
 .cart-calculater {
     width: 40%;
     background-color: var(--white-bga);
     box-shadow: 0.7px 0.7px 0.6px 0.6px var(--shadow-gainsboro);
     margin-left: 3rem;
-    height: 14.4rem;
+    height: 15rem;
 }
 
 .cartheading-calc {
     padding: 0.9rem 1rem;
     box-shadow: 0.1px 0.1px 0.6px 0.6px var(--shadow-gainsboro);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .price-details {
@@ -47,7 +39,7 @@
 .total-paybox {
     display: flex;
     margin: 1rem 1rem;
-    font-weight: 600;
+    font-weight: 500;
     justify-content: space-between;
 }
 
@@ -58,8 +50,8 @@
     background-color: #f05632;
     width: 10rem;
     color: var(--white-bga);
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 400;
     cursor: pointer;
 }
 
