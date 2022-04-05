@@ -1,17 +1,13 @@
 .heart{
     color: rgb(208, 208, 208);
     position: absolute;
-    bottom: 17.67rem;
+    bottom: 17.8rem;
     left: 9.1rem;
     font-size: 1.2rem;
 }
 
 .card-container-part{
-    height: 19.39rem;
-}
-
-.card-add-btn{
-    margin-top: 0.3rem;
+    height: 19.56rem;
 }
 
 .all-data{
