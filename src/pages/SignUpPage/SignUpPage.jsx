@@ -53,9 +53,9 @@ const SignUpPage = () => {
       </div>
 
       <div className="dont-acc-outerbox">
-        <div className="dont-acc">Already have an account ?</div>
+        <div className="dont-acc">Already have an account ? </div>
         <Link to="/Login" className="sign-up-anchor">
-          Login
+          &nbsp; Login
         </Link>
       </div>
     </form>

@@ -21,6 +21,7 @@ const FilterBar = () => {
             <input
               type="radio"
               name="sort"
+              checked={productListState.sort === "LOW_TO_HIGH"}
               onChange={() =>
                 productListDispatch({ type: "SORT", payload: "LOW_TO_HIGH" })
               }
@@ -33,6 +34,7 @@ const FilterBar = () => {
             <input
               type="radio"
               name="sort"
+              checked={productListState.sort === "HIGH_TO_LOW"}
               onChange={() =>
                 productListDispatch({ type: "SORT", payload: "HIGH_TO_LOW" })
               }
@@ -155,6 +157,7 @@ const FilterBar = () => {
               <input
                 type="radio"
                 name="ratings"
+                checked={productListState.rating === "5"}
                 onChange={() =>
                   productListDispatch({ type: "RATING", payload: "5" })
                 }
@@ -167,6 +170,7 @@ const FilterBar = () => {
               <input
                 type="radio"
                 name="ratings"
+                checked={productListState.rating === "4"}
                 onChange={() =>
                   productListDispatch({ type: "RATING", payload: "4" })
                 }
@@ -179,6 +183,7 @@ const FilterBar = () => {
               <input
                 type="radio"
                 name="ratings"
+                checked={productListState.rating === "3"}
                 onChange={() =>
                   productListDispatch({ type: "RATING", payload: "3" })
                 }
@@ -191,6 +196,7 @@ const FilterBar = () => {
               <input
                 type="radio"
                 name="ratings"
+                checked={productListState.rating === "2"}
                 onChange={() =>
                   productListDispatch({ type: "RATING", payload: "2" })
                 }
@@ -203,6 +209,7 @@ const FilterBar = () => {
               <input
                 type="radio"
                 name="ratings"
+                checked={productListState.rating === "1"}
                 onChange={() =>
                   productListDispatch({ type: "RATING", payload: "1" })
                 }

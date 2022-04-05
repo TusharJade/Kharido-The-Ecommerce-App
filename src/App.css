@@ -1,5 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Nunito:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 body {
     background-color: var(--body-bg);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --kharido-bg: #2874f0;
+    --white-bga: white;
+    --shadow-gainsboro: gainsboro;
+    --body-bg: #f1f3f6;
+    --color-primary: #f05632;
+    --color-secondary: #f59e28;
+    --white-bga: white;
+    --shadow-gainsboro: gainsboro;
+    --body-bg: #f1f3f6;
+    --green: green;
+    --color-primary: #f05632;
+    --gainsboro: gainsboro;
+    --white: white;
+    --white-smoke: whitesmoke;
+    --bg-dismiss: rgb(230, 230, 230);
+    --gainsboro: gainsboro;
+    --dismiss-icn-temp: #333333;
 }

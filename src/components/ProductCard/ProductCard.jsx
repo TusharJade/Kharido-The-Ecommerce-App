@@ -1,8 +1,10 @@
 import { useCartContext } from "../../context/cart-context";
 import { Link } from "react-router-dom";
 import "./ProductCard.css";
+import { useWishlistContext } from "../../context/wishlist-context";
 
 const ProductCard = ({ item }) => {
+  const { wishlistState, wishlistDispatch } = useWishlistContext();
   const { cartState, cartDispatch } = useCartContext();
   return (
     <div className="card-container-part">
@@ -24,7 +26,7 @@ const ProductCard = ({ item }) => {
         </div>
       </div>
 
-      {cartState.cartList.find((cartItem) => cartItem.id === item.id) ? (
+      {cartState.cartList.find((cartItem) => cartItem._id === item._id) ? (
         <button className="card-add-btn">
           <Link to="/AddToCart" className="link">
             <i className="fas fa-shopping-cart"></i> Go to cart
@@ -39,9 +41,27 @@ const ProductCard = ({ item }) => {
         </button>
       )}
 
-      <div>
-        <i className="fas fa-heart heart"></i>
-      </div>
+      {wishlistState.wishList.find(
+        (wishlistItem) => wishlistItem._id === item._id
+      ) ? (
+        <div
+          onClick={() =>
+            wishlistDispatch({ type: "REMOVE_FROM_WISHLIST", payload: item })
+          }
+          className="wishlist-hover"
+        >
+          <i className="fas fa-heart heart heartfull"></i>
+        </div>
+      ) : (
+        <div
+          onClick={() =>
+            wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: item })
+          }
+          className="wishlist-hover"
+        >
+          <i className="fas fa-heart heart"></i>
+        </div>
+      )}
     </div>
   );
 };

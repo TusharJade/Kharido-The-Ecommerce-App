@@ -8,22 +8,25 @@ import { CategoryContextProvider } from "./context/category-context";
 import { ProductContextProvider } from "./context/product-context";
 import { FilterContextProvider } from "./context/filter-context";
 import { CartContextProvide } from "./context/cart-context";
+import { WishlistContextProvider } from "./context/wishlist-context";
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <CartContextProvide>
-      <FilterContextProvider>
-        <ProductContextProvider>
-          <CategoryContextProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </CategoryContextProvider>
-        </ProductContextProvider>
-      </FilterContextProvider>
-    </CartContextProvide>
+    <WishlistContextProvider>
+      <CartContextProvide>
+        <FilterContextProvider>
+          <ProductContextProvider>
+            <CategoryContextProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </CategoryContextProvider>
+          </ProductContextProvider>
+        </FilterContextProvider>
+      </CartContextProvide>
+    </WishlistContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
