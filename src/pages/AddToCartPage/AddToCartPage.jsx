@@ -9,7 +9,7 @@ const AddToCartPage = () => {
     <div className="mainbox">
       <div className="card-outerspace">
         {cartState.cartList.map((items) => {
-          return <HorizontalCard item={items} />;
+          return <HorizontalCard key={items._id} item={items} />;
         })}
       </div>
       {cartState.cartList.length === 0 ? (

@@ -17,7 +17,7 @@ const HorizontalCard = ({ item }) => {
         <div className="price">Rs. {item.discountPrice}</div>
         <div className="price-cut-container">
           <span className="price-cut">Rs.{item.mrp}</span>
-          <span class="price-offer">({item.discountPercent}% off)</span>
+          <span className="price-offer">({item.discountPercent}% off)</span>
         </div>
 
         <div className="horizon-btn-div">
@@ -25,14 +25,14 @@ const HorizontalCard = ({ item }) => {
             className="horizon-btn"
             onClick={() => cartDispatch({ type: "DECREASE", payload: item })}
           >
-            <i class="fas fa-minus plus-minus"></i>
+            <i className="fas fa-minus plus-minus"></i>
           </button>
           <span>{item.cartQuantity}</span>
           <button
             className="horizon-btn"
             onClick={() => cartDispatch({ type: "INCREASE", payload: item })}
           >
-            <i class="fas fa-plus plus-minus"></i>
+            <i className="fas fa-plus plus-minus"></i>
           </button>
         </div>
         {wishlistState.wishList.find(

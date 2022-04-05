@@ -13,22 +13,22 @@ const LandingPage = () => {
       <Link to="/ProductListing" className="link-style">
         <section className="section-categery">
           {category.map((items) => {
-            return <ProductCategory item={items} />;
+            return <ProductCategory key={items._id} item={items} />;
           })}
         </section>
       </Link>
-      <section class="deals-ofday">
-        <div class="offer-name">
-          <div class="dealname">Deals of the Day</div>
+      <section className="deals-ofday">
+        <div className="offer-name">
+          <div className="dealname">All Products</div>
           <Link to="/ProductListing">
             <button className="view-all">View All</button>
           </Link>
         </div>
 
-        <div class="deals-line"></div>
+        <div className="deals-line"></div>
         <div className="product-landing-outerbox">
           {products.map((items) => (
-            <ProductCardLanding item={items} />
+            <ProductCardLanding key={items._id} item={items} />
           ))}
         </div>
       </section>

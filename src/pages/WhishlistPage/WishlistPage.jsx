@@ -26,7 +26,7 @@ const WishlistPage = () => {
           <div className="wishlist-container">
             {wishlistState.wishList.map((items) => {
               return items.inWishlist === true ? (
-                <ProductCard item={items} />
+                <ProductCard key={items._id} item={items} />
               ) : (
                 items
               );

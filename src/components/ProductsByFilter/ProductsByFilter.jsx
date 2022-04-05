@@ -40,7 +40,7 @@ const ProductsByFilter = () => {
   return (
     <section className="product-listing">
       {finalData.map((items) => {
-        return <ProductCard item={items} />;
+        return <ProductCard key={items._id} item={items} />;
       })}
     </section>
   );
