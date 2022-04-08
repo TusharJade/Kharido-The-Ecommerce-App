@@ -8,6 +8,7 @@
 
 .card-container-part{
     height: 19.56rem;
+    cursor: pointer;
 }
 
 .all-data{
@@ -38,4 +39,9 @@
 
 .price{
     margin-top: 0.3rem;
+}
+
+.cart-link{
+    text-decoration: none;
+    color: black;
 }

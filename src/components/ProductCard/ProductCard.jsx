@@ -1,13 +1,19 @@
-import { useCartContext } from "../../context/cart-context";
-import { Link } from "react-router-dom";
 import "./ProductCard.css";
+import { useCartContext } from "../../context/cart-context";
 import { useWishlistContext } from "../../context/wishlist-context";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   const { wishlistState, wishlistDispatch } = useWishlistContext();
   const { cartState, cartDispatch } = useCartContext();
+  const navigate = useNavigate();
   return (
-    <div className="card-container-part">
+    <div
+      className="card-container-part"
+      onClick={() => {
+        navigate(`/ProductDetails/${item._id}`);
+      }}
+    >
       <div className="card-img-box">
         <img className="card-image" src={item.img} alt="img error" />
       </div>
@@ -28,14 +34,21 @@ const ProductCard = ({ item }) => {
 
       {cartState.cartList.find((cartItem) => cartItem._id === item._id) ? (
         <button className="card-add-btn">
-          <Link to="/AddToCart" className="link">
+          <Link
+            to="/AddToCart"
+            className="link"
+            onClick={(e) => e.stopPropagation()}
+          >
             <i className="fas fa-shopping-cart"></i> Go to cart
           </Link>
         </button>
       ) : (
         <button
           className="card-add-btn"
-          onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: item })}
+          onClick={(e) => {
+            cartDispatch({ type: "ADD_TO_CART", payload: item });
+            e.stopPropagation();
+          }}
         >
           <i className="fas fa-shopping-cart"></i> Add to cart
         </button>
@@ -45,18 +58,20 @@ const ProductCard = ({ item }) => {
         (wishlistItem) => wishlistItem._id === item._id
       ) ? (
         <div
-          onClick={() =>
-            wishlistDispatch({ type: "REMOVE_FROM_WISHLIST", payload: item })
-          }
+          onClick={(e) => {
+            wishlistDispatch({ type: "REMOVE_FROM_WISHLIST", payload: item });
+            e.stopPropagation();
+          }}
           className="wishlist-hover"
         >
           <i className="fas fa-heart heart heartfull"></i>
         </div>
       ) : (
         <div
-          onClick={() =>
-            wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: item })
-          }
+          onClick={(e) => {
+            wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: item });
+            e.stopPropagation();
+          }}
           className="wishlist-hover"
         >
           <i className="fas fa-heart heart"></i>

@@ -1,6 +1,5 @@
 import { useFilterContext } from "../../context/filter-context";
 import "./ProductCategory.css";
-import { Link } from "react-router-dom";
 
 const ProductCategory = ({ item }) => {
   const { productListState, productListDispatch } = useFilterContext();
