@@ -9,8 +9,9 @@ const ProductCard = ({ item }) => {
   const navigate = useNavigate();
   return (
     <div
-      className="card-container-part"
-      onClick={() => {
+      className="card-container-part noSelect"
+      onClick={(e) => {
+        e.stopPropagation();
         navigate(`/ProductDetails/${item._id}`);
       }}
     >
