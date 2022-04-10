@@ -18,6 +18,8 @@ export const products = [
     discountPercent: "80",
     img: "https://rukminim2.flixcart.com/image/452/542/kt7jv680/shopsy-t-shirt/x/g/8/xl-skb-try-this-original-imag6hqngemxvfst.jpeg?q=50",
     categoryName: "fashion",
+    productDetail:
+      "Blive mens Round neck half sleeve T-shirt direct from the manfacturers.By wearing this tshirt it gives a stylish look and great comfort.Fill your wardrobe with beautiful and stylish collections of tripr tshirts. Trusted brand online and no compromise on quality.",
     inWishlist: false,
   },
   {
@@ -32,6 +34,8 @@ export const products = [
     discountPercent: "76",
     img: "https://rukminim2.flixcart.com/image/452/542/kk8mcnk0/t-shirt/i/j/r/l-t339hs-blwh-new-eyebogler-original-imafzmkyybvqcuht.jpeg?q=50",
     categoryName: "fashion",
+    productDetail:
+      "Construct an easy-going look in this black t-shirt from Levi's. Your skin will love the feel of this regular fit t-shirt as it is fashioned using cotton fabric. It has a classic crew neck, short sleeves and graphic pattern. This is an easy pick whenever you are in the mood for a comfortable casual wear that does not compromise on style as it can be teamed up with any dark jeans.",
     inWishlist: false,
   },
   {
@@ -46,6 +50,8 @@ export const products = [
     discountPercent: "4",
     img: "https://rukminim2.flixcart.com/image/280/280/k7usyvk0/edible-oil/e/t/c/1-sunlite-refined-pouch-sunflower-oil-fortune-original-imafpzwhyyhhvzbk.jpeg?q=70",
     categoryName: "grocery",
+    productDetail:
+      "It is pertinent to note that, actual product packaging and materials may contain more and/or different information which may include nutritional information/allergen declaration/special instruction for intended use/warning/directions etc. We recommend the consumers to always read the label carefully before using or consuming any products. Please do not solely rely on the information provided on this website.",
     inWishlist: false,
   },
   {
@@ -58,8 +64,10 @@ export const products = [
     discountPrice: "5,999",
     discountPriceCalculation: "6999",
     discountPercent: "30",
-    img: "https://rukminim2.flixcart.com/image/312/312/ktketu80/mobile/z/k/a/iphone-13-mini-mlkc3hn-a-apple-original-imag6vp6dzauezvs.jpeg?q=70",
+    img: "https://rukminim2.flixcart.com/image/832/832/ji0lbbk0/mobile/3/m/k/mi-redmi-5-na-original-imaf5semqnagymyq.jpeg?q=70",
     categoryName: "mobiles",
+    productDetail:
+      "12MP+5MP dual rear camera with portrait mode PDAF, HDR, flash | 20MP front facing camera with portrait mode, flash light. 15.2146 centimeters (5.99-inch) with 2160 x 1080 pixels resolution, 403 ppi pixel density; Unlock your phone at a glance with face unlock all completed in under 0.2 seconds. Memory, Storage and SIM: 4GB RAM | 64GB internal memory | Dual SIM (nano+nano) dual-standby (4G+4G). 4000mAH lithium-polymer battery ; Redmi Note 5 Pro is specially designed to spread corner impacts to prevent screen damage.",
     inWishlist: false,
   },
   {
@@ -74,6 +82,8 @@ export const products = [
     discountPercent: "44",
     img: "https://rukminim2.flixcart.com/image/612/612/kg5fzww0pkrrdj/router-refurbished/m/9/h/a-dir-819-d-link-original-imafwjfvpfynagup.jpeg?q=70",
     categoryName: "electronics",
+    productDetail:
+      "With this TP-Link router, you can enjoy and share your 4G LTE network with multiple Wi-Fi devices and get lightning-fast download speeds. It doesn't matter if you're working from your home office or from a remote location, you'll get to enjoy high productivity levels as this device lets you stay connected, as long as you are within network range.",
     inWishlist: false,
   },
   {
@@ -88,6 +98,8 @@ export const products = [
     discountPercent: "10",
     img: "https://rukminim2.flixcart.com/image/312/312/ktyp8cw0/television/q/r/o/32hdndmsvab-marq-original-imag76pvrgnqhxhu.jpeg?q=70",
     categoryName: "appliances",
+    productDetail:
+      "Watching your favourite shows and movies is entertaining and fun on the MarQ By Flipkart 80 cm (32) HD Ready LED TV. Its 250-nit brightness and 4000:1 contrast ratio deliver clear and bright images for you to enjoy. Also, with vivid display and rich colours, this TV renders life-like scenes that are engrossing. Moreover, its high refresh rate of 60 Hz helps display smooth transitions that add to the viewing experience.",
     inWishlist: false,
   },
   {
@@ -102,6 +114,8 @@ export const products = [
     discountPercent: "90",
     img: "https://rukminim2.flixcart.com/image/612/612/k3xcdjk0/stuffed-toy/b/8/5/adorable-teddy-bear-purple-color-medium-size-3-feet-for-your-original-imafmy5tp9sxpnzz.jpeg?q=70",
     categoryName: "toys",
+    productDetail:
+      "Soft And Cuddly Filling, Huggable And Loveable For Someone Special, Teach Your Loved One The Act Of Hugging With The Help Of These Teddies. Super Soft Plush Materials For Huggable Loveable Joy And Keeps Kids Playful For Long Hours. Gift This Soft, Smooth And Cuddly Teddy As A Great Gift To Your Loved One. Great For All Kids (And Adults) Who Love To Hold, Hug, Cuddle And Treasure. Made Out Of Non-Toxic Polyester And Fur Fabrics. Excellent Poly-Staple And Conjugate Filling Fiber Used Has Good Resiliency Making It Most Appropriate For Machine Or Hand Wash",
     inWishlist: false,
   },
   {
@@ -116,6 +130,8 @@ export const products = [
     discountPercent: "79",
     img: "https://rukminim2.flixcart.com/image/612/612/ktvucnk0/mask-respirator/h/c/w/free-size-100-os-adb-001-100-surgical-mask-osiris-original-imag74ntzqtkfacd.jpeg?q=70",
     categoryName: "masks",
+    productDetail:
+      "OSIRIS Surgical mask Latex Free, Hypoallergenic, Fiberglass fee, Fluid Resistant, Three Ply construction. 3 pleats of folds to allow the user to expand the mask so it covers the area from the nose to the chin. Mask should be secured with an ear loop to be placed behind the ears. > ... Reduces exposure to blood and body fluids, Certified by ISO, CE, WHO-GMP, FDA",
     inWishlist: false,
   },
   {
@@ -130,6 +146,8 @@ export const products = [
     discountPercent: "50",
     img: "https://rukminim2.flixcart.com/image/612/612/kcp4osw0/snack-savourie/j/z/v/200-bhujia-sev-pouch-haldiram-s-original-imaftrryz6hzgyrp.jpeg?q=70",
     categoryName: "snacks",
+    productDetail:
+      "It is pertinent to note that, actual product packaging and materials may contain more and/or different information which may include nutritional information/allergen declaration/special instruction for intended use/warning/directions etc. We recommend the consumers to always read the label carefully before using or consuming any products. Please do not solely rely on the information provided on this website. For additional information, please contact the manufacturer.",
     inWishlist: false,
   },
 ];
