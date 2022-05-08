@@ -49,7 +49,7 @@ const Navbar = () => {
         </Link>
 
         {auth.loginStatus ? (
-          <div className="head-login" onClick={logoutHandler}>
+          <div className="head-login logout-btn" onClick={logoutHandler}>
             Logout
           </div>
         ) : (
