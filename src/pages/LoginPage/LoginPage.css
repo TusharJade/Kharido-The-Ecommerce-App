@@ -1,7 +1,6 @@
 
 .login {
     width: 30%;
-    height: 24.3rem;
     margin: auto;
     margin-top: 5rem;
     background-color: var(--white-bga);
@@ -10,7 +9,6 @@
 
 .sign-up {
     width: 30%;
-    height: 35.5rem;
     margin: auto;
     margin-top: 5rem;
     background-color: var(--white-bga);
@@ -33,9 +31,9 @@
     border-radius: 0.3rem;
 }
 
-
 .inputs-outerbox {
     margin: 1rem 2rem;
+    position: relative;
 }
 
 .logins-outerbox {
@@ -49,6 +47,7 @@
     color: var(--white-bga);
     font-weight: 600;
     width: 100%;
+    cursor: pointer;
 }
 
 .guest-login {
@@ -59,6 +58,7 @@
     font-weight: 600;
     width: 100%;
     margin: 1rem 0rem 0rem 0rem;
+    cursor: pointer;
 }
 
 .dont-acc {
@@ -75,13 +75,28 @@
 
 .dont-acc-outerbox {
     display: flex;
-    margin: 1rem 2rem;
+    padding: 0 0 14px 0;
     justify-content: center;
 }
 
+.password-eye{
+    position: absolute;
+    right: 8px;
+    font-size: 1.3rem;
+    color: rgb(75, 67, 67);
+    top: 1.75rem;
+    cursor: pointer;
+}
 
-
-
+.password-dont-match{
+    background-color: rgb(207, 49, 21);
+    border-radius: 7px;
+    color: var(--white);
+    margin: 0 2rem;
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
 
 @media (max-width:900px) {
     .login {

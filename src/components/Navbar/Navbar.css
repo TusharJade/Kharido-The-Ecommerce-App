@@ -23,3 +23,7 @@
 .two{
     left: 0.85rem;
 }
+
+.logout-btn{
+    cursor: pointer;
+}
