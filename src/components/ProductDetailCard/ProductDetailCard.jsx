@@ -1,12 +1,14 @@
 import "./ProductDetailCard.css";
 import { useWishlistContext } from "../../context/wishlist-context";
 import { useCartContext } from "../../context/cart-context";
-import { Link } from "react-router-dom";
+import { useAuthContext } from "../../context/auth-context";
+import { useNavigate, Link } from "react-router-dom";
 
 const ProductDetailCard = ({ item }) => {
-  const { myWishlist, setMyWishlist, addToWishlist, removeFromWishlist } =
-    useWishlistContext();
+  const { myWishlist, addToWishlist } = useWishlistContext();
   const { myCart, addToCart } = useCartContext();
+  const { auth } = useAuthContext();
+  const navigate = useNavigate();
   return (
     <div className="main-box">
       <div className="leftside-productbox">
@@ -22,7 +24,9 @@ const ProductDetailCard = ({ item }) => {
             </Link>
           ) : (
             <button
-              onClick={() => addToCart(item)}
+              onClick={() => {
+                auth.loginStatus ? addToCart(item) : navigate("/Login");
+              }}
               className="product-details add-to-cart"
             >
               <i className="fas fa-shopping-cart"></i> Add To Cart
@@ -37,7 +41,9 @@ const ProductDetailCard = ({ item }) => {
             </Link>
           ) : (
             <button
-              onClick={() => addToWishlist(item)}
+              onClick={() => {
+                auth.loginStatus ? addToWishlist(item) : navigate("/Login");
+              }}
               className="product-details add-to-wishlist"
             >
               Add To Wishlist

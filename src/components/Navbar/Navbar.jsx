@@ -29,7 +29,10 @@ const Navbar = () => {
         Kharido
       </Link>
       <div className="end-headside">
-        <Link to="/Wishlist" className="header-cart-color">
+        <Link
+          to={auth.loginStatus ? "/Wishlist" : "/Login"}
+          className="header-cart-color"
+        >
           <div className="wishlist-icon">
             <i className="far fa-heart"></i>
             {myWishlist.length === 0 ? null : (
@@ -37,7 +40,10 @@ const Navbar = () => {
             )}
           </div>
         </Link>
-        <Link to="/AddToCart" className="header-cart-color">
+        <Link
+          to={auth.loginStatus ? "/AddToCart" : "/Login"}
+          className="header-cart-color"
+        >
           <div className="cart-iconbox">
             <i className="fas fa-shopping-cart"></i>
             {myCart.length === 0 ? null : (

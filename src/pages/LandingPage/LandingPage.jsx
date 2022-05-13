@@ -6,8 +6,8 @@ import { ProductCardLanding } from "../../components/ProductCardLanding/ProductC
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
-  const { category, setCategory } = useCategoryContext();
-  const { products, setProducts } = useProductContext();
+  const { category } = useCategoryContext();
+  const { products } = useProductContext();
   return (
     <>
       <Link to="/ProductListing" className="link-style">

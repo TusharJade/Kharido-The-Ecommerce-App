@@ -5,7 +5,7 @@ import { ProductDetailCard } from "../../components/ProductDetailCard/ProductDet
 
 const ProductDetailsPage = () => {
   const { ProductId } = useParams();
-  const { products, setProducts } = useProductContext();
+  const { products } = useProductContext();
 
   const productDetailDataFunc = (data, id) => {
     return data.find((uniqueItem) => uniqueItem._id === id);

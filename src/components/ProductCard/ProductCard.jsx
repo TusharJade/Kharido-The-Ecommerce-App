@@ -1,13 +1,16 @@
 import "./ProductCard.css";
 import { useCartContext } from "../../context/cart-context";
 import { useWishlistContext } from "../../context/wishlist-context";
+import { useAuthContext } from "../../context/auth-context";
 import { Link, useNavigate } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
-  const { myWishlist, setMyWishlist, addToWishlist, removeFromWishlist } =
+  const { myWishlist, addToWishlist, removeFromWishlist } =
     useWishlistContext();
   const { myCart, addToCart } = useCartContext();
+  const { auth } = useAuthContext();
   const navigate = useNavigate();
+
   return (
     <div
       className="card-container-part noSelect"
@@ -49,7 +52,7 @@ const ProductCard = ({ item }) => {
           className="card-add-btn"
           onClick={(e) => {
             e.stopPropagation();
-            addToCart(item);
+            auth.loginStatus ? addToCart(item) : navigate("/Login");
           }}
         >
           <i className="fas fa-shopping-cart"></i> Add to cart
@@ -70,7 +73,7 @@ const ProductCard = ({ item }) => {
         <div
           onClick={(e) => {
             e.stopPropagation();
-            addToWishlist(item);
+            auth.loginStatus ? addToWishlist(item) : navigate("/Login");
           }}
           className="wishlist-hover"
         >

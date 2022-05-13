@@ -3,6 +3,7 @@ import { CartPrice } from "../../components/CartPrice/CartPrice";
 import { useCartContext } from "../../context/cart-context";
 import { Link } from "react-router-dom";
 import "./AddToCartPage.css";
+
 const AddToCartPage = () => {
   const { myCart } = useCartContext();
   return (
