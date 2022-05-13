@@ -1,60 +1,83 @@
-import { useContext, createContext, useReducer } from "react";
+import { useContext, createContext, useEffect, useState } from "react";
+import { useAuthContext } from "./auth-context";
+import axios from "axios";
 
 const CartContext = createContext(null);
 
-const cartReducerFunc = (cartState, action) => {
-  switch (action.type) {
-    case "ADD_TO_CART":
-      return {
-        ...cartState,
-        cartList: [
-          ...cartState.cartList,
-          { ...action.payload, cartQuantity: 1 },
-        ],
-      };
-    case "REMOVE_FROM_CART":
-      return {
-        ...cartState,
-        cartList: cartState.cartList.filter(
-          (item) => item._id !== action.payload._id
-        ),
-      };
-    case "INCREASE":
-      return {
-        ...cartState,
-        cartList: cartState.cartList.map((item) =>
-          item._id === action.payload._id
-            ? { ...item, cartQuantity: item.cartQuantity + 1 }
-            : item
-        ),
-      };
-    case "DECREASE":
-      return {
-        ...cartState,
-        cartList: cartState.cartList.map((item) =>
-          item._id === action.payload._id
-            ? {
-                ...item,
-                cartQuantity:
-                  item.cartQuantity === 1
-                    ? item.cartQuantity
-                    : item.cartQuantity - 1,
-              }
-            : item
-        ),
-      };
-
-    default:
-      return { ...cartState };
-  }
-};
-
 const CartContextProvide = ({ children }) => {
-  const [cartState, cartDispatch] = useReducer(cartReducerFunc, {
-    cartList: [],
-  });
+  const { auth, setAuth } = useAuthContext();
+
+  const [myCart, setMyCart] = useState([]);
+
+  const customHeader = {
+    headers: {
+      authorization: auth.token,
+    },
+  };
+
+  useEffect(() => {
+    if (auth.loginStatus) {
+      (async () => {
+        const response = await axios.get("/api/user/cart", customHeader);
+        setMyCart(response.data.cart);
+      })();
+    } else {
+      setMyCart([]);
+    }
+  }, [auth]);
+
+  const addToCart = async (product) => {
+    try {
+      const response = await axios.post(
+        "/api/user/cart",
+        { product },
+        customHeader
+      );
+      setMyCart(response.data.cart);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const removeFromCart = async (productID) => {
+    try {
+      const response = await axios.delete(
+        `/api/user/cart/${productID}`,
+        customHeader
+      );
+      setMyCart(response.data.cart);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const increaseQtyOfCard = async (productID, addOrRemove) => {
+    try {
+      const response = await axios.post(
+        `/api/user/cart/${productID}`,
+        {
+          action: {
+            type: addOrRemove,
+          },
+        },
+        customHeader
+      );
+      setMyCart(response.data.cart);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <CartContext.Provider value={{ cartState, cartDispatch }}>
+    <CartContext.Provider
+      value={{
+        myCart,
+        setMyCart,
+        addToCart,
+        removeFromCart,
+        increaseQtyOfCard,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

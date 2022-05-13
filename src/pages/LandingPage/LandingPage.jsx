@@ -11,11 +11,11 @@ const LandingPage = () => {
   return (
     <>
       <Link to="/ProductListing" className="link-style">
-        <section className="section-categery">
+        <div className="section-categery">
           {category.map((items) => {
             return <ProductCategory key={items._id} item={items} />;
           })}
-        </section>
+        </div>
       </Link>
       <section className="deals-ofday">
         <div className="offer-name">

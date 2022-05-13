@@ -4,8 +4,9 @@ import { useCartContext } from "../../context/cart-context";
 import { Link } from "react-router-dom";
 
 const ProductDetailCard = ({ item }) => {
-  const { wishlistState, wishlistDispatch } = useWishlistContext();
-  const { cartState, cartDispatch } = useCartContext();
+  const { myWishlist, setMyWishlist, addToWishlist, removeFromWishlist } =
+    useWishlistContext();
+  const { myCart, addToCart } = useCartContext();
   return (
     <div className="main-box">
       <div className="leftside-productbox">
@@ -13,7 +14,7 @@ const ProductDetailCard = ({ item }) => {
           <img src={item.img} className="productimg-details" />
         </div>
         <div className="btn-outerbox">
-          {cartState.cartList.find((cartItem) => cartItem._id === item._id) ? (
+          {myCart.find((cartItem) => cartItem._id === item._id) ? (
             <Link to="/AddToCart">
               <button className="product-details add-to-cart">
                 <i className="fas fa-shopping-cart"></i> Go To Cart
@@ -21,21 +22,14 @@ const ProductDetailCard = ({ item }) => {
             </Link>
           ) : (
             <button
-              onClick={() =>
-                cartDispatch({
-                  type: "ADD_TO_CART",
-                  payload: item,
-                })
-              }
+              onClick={() => addToCart(item)}
               className="product-details add-to-cart"
             >
               <i className="fas fa-shopping-cart"></i> Add To Cart
             </button>
           )}
 
-          {wishlistState.wishList.find(
-            (wishListItem) => wishListItem._id === item._id
-          ) ? (
+          {myWishlist.find((wishListItem) => wishListItem._id === item._id) ? (
             <Link to="/Wishlist">
               <button className="product-details add-to-wishlist">
                 Go To Wishlist
@@ -43,12 +37,7 @@ const ProductDetailCard = ({ item }) => {
             </Link>
           ) : (
             <button
-              onClick={() =>
-                wishlistDispatch({
-                  type: "ADD_TO_WISHLIST",
-                  payload: item,
-                })
-              }
+              onClick={() => addToWishlist(item)}
               className="product-details add-to-wishlist"
             >
               Add To Wishlist

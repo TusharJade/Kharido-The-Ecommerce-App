@@ -3,10 +3,10 @@ import { useWishlistContext } from "../../context/wishlist-context";
 import "./WishlistPage.css";
 
 const WishlistPage = () => {
-  const { wishlistState, wishlistdispatch } = useWishlistContext();
+  const { myWishlist } = useWishlistContext();
   return (
     <>
-      {wishlistState.wishList.length === 0 ? (
+      {myWishlist.length === 0 ? (
         <div className="empty-cart">
           <div className="empty-cart-bg">
             <img
@@ -24,12 +24,8 @@ const WishlistPage = () => {
         <>
           <div className="wishlist-text">My Wishlist</div>
           <div className="wishlist-container">
-            {wishlistState.wishList.map((items) => {
-              return items.inWishlist === true ? (
-                <ProductCard key={items._id} item={items} />
-              ) : (
-                items
-              );
+            {myWishlist.map((items) => {
+              return <ProductCard key={items._id} item={items} />;
             })}
           </div>
         </>

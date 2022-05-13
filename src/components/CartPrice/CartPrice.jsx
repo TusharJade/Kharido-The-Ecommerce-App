@@ -2,25 +2,23 @@ import { useCartContext } from "../../context/cart-context";
 import "./CartPrice.css";
 
 const CartPrice = () => {
-  const { cartState, cartDispatch } = useCartContext();
+  const { myCart, addToCart } = useCartContext();
 
-  const totalPriceByDiscount = cartState.cartList.reduce(
+  const totalPriceByDiscount = myCart.reduce(
     (acu, value) => {
       return {
         ...acu,
-        price:
-          acu.price +
-          Number(value.discountPriceCalculation) * value.cartQuantity,
+        price: acu.price + Number(value.discountPriceCalculation) * value.qty,
       };
     },
     { price: 0 }
   );
 
-  const totalMRP = cartState.cartList.reduce(
+  const totalMRP = myCart.reduce(
     (acu, value) => {
       return {
         ...acu,
-        price: acu.price + Number(value.mrpCalculation) * value.cartQuantity,
+        price: acu.price + Number(value.mrpCalculation) * value.qty,
       };
     },
     { price: 0 }
@@ -33,9 +31,7 @@ const CartPrice = () => {
       <div className="cartheading-calc">
         <div className="price-details">PRICE DETAILS &nbsp;</div>
         <span>
-          {cartState.cartList.length === 0
-            ? `(0 items)`
-            : `(${cartState.cartList.length} items)`}
+          {myCart.length === 0 ? `(0 items)` : `(${myCart.length} items)`}
         </span>
       </div>
 

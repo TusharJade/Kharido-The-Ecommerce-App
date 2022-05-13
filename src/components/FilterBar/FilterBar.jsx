@@ -6,7 +6,7 @@ const FilterBar = () => {
     <section>
       <div className="all-contain">
         <div className="filters">
-          Filters{" "}
+          Filters
           <span
             className="clear-all"
             onClick={() => productListDispatch({ type: "" })}
@@ -25,7 +25,7 @@ const FilterBar = () => {
               onChange={() =>
                 productListDispatch({ type: "SORT", payload: "LOW_TO_HIGH" })
               }
-            />{" "}
+            />
             Price - Low to High
           </label>
         </li>
