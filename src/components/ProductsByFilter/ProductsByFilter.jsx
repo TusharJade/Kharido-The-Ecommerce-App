@@ -4,8 +4,8 @@ import { useProductContext } from "../../context/product-context";
 import { useFilterContext } from "../../context/filter-context";
 
 const ProductsByFilter = () => {
-  const { products, setProducts } = useProductContext();
-  const { productListState, productListDispatch } = useFilterContext();
+  const { products } = useProductContext();
+  const { productListState } = useFilterContext();
 
   const sortBy = (data, sortvalue) => {
     if (sortvalue === "LOW_TO_HIGH") {

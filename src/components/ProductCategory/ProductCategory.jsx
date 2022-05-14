@@ -2,7 +2,7 @@ import { useFilterContext } from "../../context/filter-context";
 import "./ProductCategory.css";
 
 const ProductCategory = ({ item }) => {
-  const { productListState, productListDispatch } = useFilterContext();
+  const { productListDispatch } = useFilterContext();
   return (
     <div
       className="category-anchor"

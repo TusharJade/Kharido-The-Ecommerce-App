@@ -59,3 +59,7 @@
 .noSelect:focus {
     outline: none !important;
 }
+
+.go-to-cart-btn{
+ padding: 6.3px 2.25rem;
+}

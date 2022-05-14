@@ -5,7 +5,7 @@ import axios from "axios";
 import { useAuthContext } from "../../context/auth-context";
 
 const SignUpPage = () => {
-  const { auth, setAuth } = useAuthContext();
+  const { setAuth } = useAuthContext();
 
   const [signupInfo, setSignupInfo] = useState({
     firstName: "",
@@ -45,7 +45,7 @@ const SignUpPage = () => {
             email: signupInfo.email,
             password: signupInfo.password,
           });
-          console.log(response);
+
           localStorage.setItem("TOKEN", response.data.encodedToken);
           localStorage.setItem(
             "USER_INFO",
@@ -221,7 +221,7 @@ const SignUpPage = () => {
 
       {matchPassword.matchPasswordStatus ? (
         <div className="password-dont-match">
-          <i class="fas fa-exclamation-triangle"></i>
+          <i className="fas fa-exclamation-triangle"></i>
           &nbsp;{matchPassword.messege}
         </div>
       ) : null}

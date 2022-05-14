@@ -4,8 +4,8 @@ import "./HorizontalCard.css";
 import { Link } from "react-router-dom";
 
 const HorizontalCard = ({ item }) => {
-  const { cartState, cartDispatch } = useCartContext();
-  const { wishlistState, wishlistDispatch } = useWishlistContext();
+  const { removeFromCart, increaseQtyOfCard } = useCartContext();
+  const { myWishlist, addToWishlist } = useWishlistContext();
   return (
     <div className="card-container-horiz">
       <div className="card-img-box">
@@ -23,41 +23,34 @@ const HorizontalCard = ({ item }) => {
         <div className="horizon-btn-div">
           <button
             className="horizon-btn"
-            onClick={() => cartDispatch({ type: "DECREASE", payload: item })}
+            onClick={() =>
+              item.qty > 1 ? increaseQtyOfCard(item._id, "decrement") : null
+            }
           >
             <i className="fas fa-minus plus-minus"></i>
           </button>
-          <span>{item.cartQuantity}</span>
+          <span>{item.qty}</span>
           <button
             className="horizon-btn"
-            onClick={() => cartDispatch({ type: "INCREASE", payload: item })}
+            onClick={() => increaseQtyOfCard(item._id, "increment")}
           >
             <i className="fas fa-plus plus-minus"></i>
           </button>
         </div>
-        {wishlistState.wishList.find(
-          (wishlistItem) => wishlistItem._id === item._id
-        ) ? (
+        {myWishlist.find((wishlistItem) => wishlistItem._id === item._id) ? (
           <Link className="Link" to="/Wishlist">
             <button className="card-add-btn horizon-ca">Go to wishlist</button>
           </Link>
         ) : (
           <button
-            onClick={() =>
-              wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: item })
-            }
+            onClick={() => addToWishlist(item)}
             className="card-add-btn horizon-ca"
           >
             Move to wishlist
           </button>
         )}
 
-        <div
-          className="delete-button"
-          onClick={() =>
-            cartDispatch({ type: "REMOVE_FROM_CART", payload: item })
-          }
-        >
+        <div className="delete-button" onClick={() => removeFromCart(item._id)}>
           <i className="fas fa-times cross-color"></i>
         </div>
       </div>

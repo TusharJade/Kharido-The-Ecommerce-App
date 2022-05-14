@@ -1,11 +1,14 @@
 import "./ProductDetailCard.css";
 import { useWishlistContext } from "../../context/wishlist-context";
 import { useCartContext } from "../../context/cart-context";
-import { Link } from "react-router-dom";
+import { useAuthContext } from "../../context/auth-context";
+import { useNavigate, Link } from "react-router-dom";
 
 const ProductDetailCard = ({ item }) => {
-  const { wishlistState, wishlistDispatch } = useWishlistContext();
-  const { cartState, cartDispatch } = useCartContext();
+  const { myWishlist, addToWishlist } = useWishlistContext();
+  const { myCart, addToCart } = useCartContext();
+  const { auth } = useAuthContext();
+  const navigate = useNavigate();
   return (
     <div className="main-box">
       <div className="leftside-productbox">
@@ -13,7 +16,7 @@ const ProductDetailCard = ({ item }) => {
           <img src={item.img} className="productimg-details" />
         </div>
         <div className="btn-outerbox">
-          {cartState.cartList.find((cartItem) => cartItem._id === item._id) ? (
+          {myCart.find((cartItem) => cartItem._id === item._id) ? (
             <Link to="/AddToCart">
               <button className="product-details add-to-cart">
                 <i className="fas fa-shopping-cart"></i> Go To Cart
@@ -21,21 +24,16 @@ const ProductDetailCard = ({ item }) => {
             </Link>
           ) : (
             <button
-              onClick={() =>
-                cartDispatch({
-                  type: "ADD_TO_CART",
-                  payload: item,
-                })
-              }
+              onClick={() => {
+                auth.loginStatus ? addToCart(item) : navigate("/Login");
+              }}
               className="product-details add-to-cart"
             >
               <i className="fas fa-shopping-cart"></i> Add To Cart
             </button>
           )}
 
-          {wishlistState.wishList.find(
-            (wishListItem) => wishListItem._id === item._id
-          ) ? (
+          {myWishlist.find((wishListItem) => wishListItem._id === item._id) ? (
             <Link to="/Wishlist">
               <button className="product-details add-to-wishlist">
                 Go To Wishlist
@@ -43,12 +41,9 @@ const ProductDetailCard = ({ item }) => {
             </Link>
           ) : (
             <button
-              onClick={() =>
-                wishlistDispatch({
-                  type: "ADD_TO_WISHLIST",
-                  payload: item,
-                })
-              }
+              onClick={() => {
+                auth.loginStatus ? addToWishlist(item) : navigate("/Login");
+              }}
               className="product-details add-to-wishlist"
             >
               Add To Wishlist

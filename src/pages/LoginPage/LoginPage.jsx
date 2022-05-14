@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useAuthContext } from "../../context/auth-context";
 
 const LoginPage = () => {
-  const { auth, setAuth } = useAuthContext();
+  const { setAuth } = useAuthContext();
 
   const [loginInfo, setLoginInfo] = useState({ email: "", password: "" });
 
@@ -61,7 +61,6 @@ const LoginPage = () => {
           messege: "Email doen't exist",
         });
       }
-      console.log(error);
     }
   };
 
@@ -143,7 +142,7 @@ const LoginPage = () => {
 
       {error.errorStatus ? (
         <div className="password-dont-match">
-          <i class="fas fa-exclamation-triangle"></i>
+          <i className="fas fa-exclamation-triangle"></i>
           &nbsp; {error.messege}
         </div>
       ) : null}

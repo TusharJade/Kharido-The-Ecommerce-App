@@ -3,16 +3,17 @@ import { CartPrice } from "../../components/CartPrice/CartPrice";
 import { useCartContext } from "../../context/cart-context";
 import { Link } from "react-router-dom";
 import "./AddToCartPage.css";
+
 const AddToCartPage = () => {
-  const { cartState, cartDispatch } = useCartContext();
+  const { myCart } = useCartContext();
   return (
     <div className="mainbox">
       <div className="card-outerspace">
-        {cartState.cartList.map((items) => {
+        {myCart.map((items) => {
           return <HorizontalCard key={items._id} item={items} />;
         })}
       </div>
-      {cartState.cartList.length === 0 ? (
+      {myCart.length === 0 ? (
         <div className="empty-cart">
           <div className="empty-cart-bg">
             <img

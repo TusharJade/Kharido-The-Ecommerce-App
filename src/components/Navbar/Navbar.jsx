@@ -7,8 +7,8 @@ import "./Navbar.css";
 const Navbar = () => {
   const { auth, setAuth } = useAuthContext();
   const navigate = useNavigate();
-  const { cartState, cartDispatch } = useCartContext();
-  const { wishlistState, wishlistDispatch } = useWishlistContext();
+  const { myCart } = useCartContext();
+  const { myWishlist } = useWishlistContext();
 
   const logoutHandler = () => {
     localStorage.removeItem("USER_INFO");
@@ -29,21 +29,25 @@ const Navbar = () => {
         Kharido
       </Link>
       <div className="end-headside">
-        <Link to="/Wishlist" className="header-cart-color">
+        <Link
+          to={auth.loginStatus ? "/Wishlist" : "/Login"}
+          className="header-cart-color"
+        >
           <div className="wishlist-icon">
             <i className="far fa-heart"></i>
-            {wishlistState.wishList.length === 0 ? null : (
-              <span className="notification two">
-                {wishlistState.wishList.length}
-              </span>
+            {myWishlist.length === 0 ? null : (
+              <span className="notification two">{myWishlist.length}</span>
             )}
           </div>
         </Link>
-        <Link to="/AddToCart" className="header-cart-color">
+        <Link
+          to={auth.loginStatus ? "/AddToCart" : "/Login"}
+          className="header-cart-color"
+        >
           <div className="cart-iconbox">
             <i className="fas fa-shopping-cart"></i>
-            {cartState.cartList.length === 0 ? null : (
-              <span className="notification">{cartState.cartList.length}</span>
+            {myCart.length === 0 ? null : (
+              <span className="notification">{myCart.length}</span>
             )}
           </div>
         </Link>

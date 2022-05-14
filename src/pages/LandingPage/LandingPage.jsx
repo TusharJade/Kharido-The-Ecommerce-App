@@ -6,16 +6,16 @@ import { ProductCardLanding } from "../../components/ProductCardLanding/ProductC
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
-  const { category, setCategory } = useCategoryContext();
-  const { products, setProducts } = useProductContext();
+  const { category } = useCategoryContext();
+  const { products } = useProductContext();
   return (
     <>
       <Link to="/ProductListing" className="link-style">
-        <section className="section-categery">
+        <div className="section-categery">
           {category.map((items) => {
             return <ProductCategory key={items._id} item={items} />;
           })}
-        </section>
+        </div>
       </Link>
       <section className="deals-ofday">
         <div className="offer-name">

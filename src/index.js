@@ -12,10 +12,6 @@ import { AuthContextProvider } from "./context/auth-context";
 // Call make Server
 makeServer();
 
-if (module.hot) {
-  module.hot.accept();
-}
-
 ReactDOM.render(
   <React.StrictMode>
     <AuthContextProvider>
