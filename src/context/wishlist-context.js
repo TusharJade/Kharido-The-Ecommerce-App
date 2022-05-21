@@ -18,8 +18,12 @@ const WishlistContextProvider = ({ children }) => {
   useEffect(() => {
     if (auth.loginStatus) {
       (async () => {
-        const response = await axios.get("/api/user/wishlist", customHeader);
-        setMyWishlist(response.data.wishlist);
+        try {
+          const response = await axios.get("/api/user/wishlist", customHeader);
+          setMyWishlist(response.data.wishlist);
+        } catch (error) {
+          console.log(error);
+        }
       })();
     } else setMyWishlist([]);
   }, [auth]);

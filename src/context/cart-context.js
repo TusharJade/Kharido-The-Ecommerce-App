@@ -18,8 +18,12 @@ const CartContextProvide = ({ children }) => {
   useEffect(() => {
     if (auth.loginStatus) {
       (async () => {
-        const response = await axios.get("/api/user/cart", customHeader);
-        setMyCart(response.data.cart);
+        try {
+          const response = await axios.get("/api/user/cart", customHeader);
+          setMyCart(response.data.cart);
+        } catch (error) {
+          console.log(error);
+        }
       })();
     } else {
       setMyCart([]);
